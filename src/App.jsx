@@ -1,14 +1,12 @@
 import { useState } from "react";
 
 function Count() {
-  const [count,setcount]=useState(0)
+  const [stext,setstext]=useState(true)
+  let myStr="Reusable components: Components are the building blocks of any React application, and a single app usually consists of multiple components. These components have their logic and controls, and they can be reused throughout the application, which in turn dramatically reduces the application’s development time."
   return (
     <div>
-      Hii,today we are going to see howmany times you clicked the button!<br/>
-      <button onClick={()=>setcount(count+1)}>Click me!</button><br/>
-      {count}<br/>
-      {count>10?<span>Stop playing with my button!!</span>:""}
-
+     <p>{stext ? myStr.slice(0,50)+'...': myStr}</p>
+     <button onClick={()=>setstext(!stext)}>{stext?'Show More':'Show Less'}</button>
     </div>
   );
 }
